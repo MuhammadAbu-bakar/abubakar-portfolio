@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --neon: #38bdf8;
+  --neon-soft: #0ea5e9;
+  --bg: #050505;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: #e5e5e5;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.neon-text {
+  color: var(--neon);
+  text-shadow: 0 0 5px var(--neon), 0 0 20px var(--neon), 0 0 40px var(--neon);
+}
+
+.neon-border {
+  border: 1px solid var(--neon);
+  box-shadow: 0 0 10px rgba(56,189,248,0.4), inset 0 0 10px rgba(56,189,248,0.1);
+}
+
+.neon-btn {
+  background: transparent;
+  border: 1.5px solid var(--neon);
+  color: var(--neon);
+  transition: all 0.3s ease;
+}
+.neon-btn:hover {
+  background: var(--neon);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon), 0 0 40px var(--neon);
+  transform: translateY(-3px);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(56,189,248,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.1); }
+}
+.animate-float { animation: float 8s ease-in-out infinite; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px var(--neon), 0 0 20px var(--neon); }
+  50% { box-shadow: 0 0 20px var(--neon), 0 0 60px var(--neon); }
+}
+.pulse-glow { animation: pulse-glow 2s infinite; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: var(--neon); border-radius: 10px; }
